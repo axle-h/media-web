@@ -2,8 +2,13 @@
 <html>
 <head>
     <title th:text="#{view.index.title}"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel='stylesheet' href='/webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <script src="webjars/jquery/2.1.1/jquery.min.js"></script>
+    <link rel='stylesheet' href='webjars/bootstrap/3.2.0/css/bootstrap.min.css' />
+    <link rel="stylesheet" href="webjars/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <script src="webjars/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
     <!-- 
     <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
     <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
@@ -15,6 +20,15 @@
 <body>
 <div th:replace="fragments/header :: header">Header</div>
 <div class="container">
+
+	<div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+        <p>
+          <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar docs &raquo;</a>
+        </p>
+      </div>
+<!-- 
     <div class="text-center">
         <h1>Test</h1>
         <p class="lead">
@@ -23,8 +37,8 @@
         <p>
             <a href="/signup" th:href="@{/signup}" class="btn btn-success btn-lg">Sign up</a>
         </p>
-    </div>
-    <div th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div>
+    </div>-->
+    <div th:replace="fragments/footer :: footer">&copy; 2013 The Static Templates</div> 
 </div>
 </body>
 </html>
