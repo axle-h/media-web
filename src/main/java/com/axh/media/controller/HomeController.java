@@ -4,16 +4,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import com.axh.media.model.domain.Film;
-import com.axh.media.service.FilmsService;
+
+import com.axh.media.config.contracts.IApplicationConfigService;
 import com.axh.media.service.contracts.IFilmsService;
+import com.axh.media.service.contracts.viewmodel.IPageViewModelService;
 
 @Controller
 @RequestMapping("/")
-public class HomeController {
+public class HomeController extends BaseController {
 
 	@Autowired
 	private IFilmsService filmsService;
+	
+	
 	
 	@RequestMapping("/")
     public ModelAndView helloWorld() {
@@ -25,8 +28,6 @@ public class HomeController {
 		
         ModelAndView mav = new ModelAndView();
         mav.setViewName("home/home");
-        mav.addObject("message", "Hello World!");
-        System.out.println("Hello World!");
         return mav;
     }
 }
