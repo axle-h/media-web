@@ -10,4 +10,8 @@ public interface IApplicationConfigService {
 
 	public abstract String getArtifactId();
 
+	public abstract String getJqueryVersion();
+
+	public abstract String getBootstrapVersion();
+
 }

@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import com.axh.media.model.view.PageViewModel;
 import com.axh.media.service.contracts.viewmodel.IPageViewModelService;
 
-@Controller
 public abstract class BaseController {
 	
 	@Autowired

@@ -17,6 +17,8 @@ public class PageViewModelService implements IPageViewModelService {
 	public PageViewModel getPageViewModel() {
 		PageViewModel model = new PageViewModel();
 		model.setApplicationName(this.applicationConfigService.getName());
+		model.setBootstrapVersion(this.applicationConfigService.getBootstrapVersion());
+		model.setJqueryVersion(this.applicationConfigService.getJqueryVersion());
 		return model;
 	}
 	

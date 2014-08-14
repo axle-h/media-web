@@ -7,6 +7,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.sql.DataSource;
 
+import nz.net.ultraq.thymeleaf.LayoutDialect;
+
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -40,57 +42,59 @@ import org.thymeleaf.templateresolver.TemplateResolver;
 @ComponentScan("com.axh.media")
 @EnableWebMvc
 public class WebAppConfig extends WebMvcConfigurerAdapter {
-    
+
 	private static final String MESSAGE_SOURCE = "/WEB-INF/i18n/messages";
-    private static final String VIEWS = "/WEB-INF/views/";
+	private static final String VIEWS = "/WEB-INF/views/";
 
-    @Override
-    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-      registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
-    }
-    
-    @Bean(name = "messageSource")
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename(MESSAGE_SOURCE);
-        messageSource.setCacheSeconds(5);
-        return messageSource;
-    }
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
+		registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+	}
 
-    @Bean
-    public TemplateResolver templateResolver() {
-        TemplateResolver templateResolver = new ServletContextTemplateResolver();
-        templateResolver.setPrefix(VIEWS);
-        templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML5");
-        templateResolver.setCacheable(false);
-        return templateResolver;
-    }
+	@Bean(name = "messageSource")
+	public MessageSource messageSource() {
+		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+		messageSource.setBasename(MESSAGE_SOURCE);
+		messageSource.setCacheSeconds(5);
+		return messageSource;
+	}
 
-    @Bean
-    public SpringTemplateEngine templateEngine() {
-        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
-        templateEngine.setTemplateResolver(templateResolver());
-        //templateEngine.addDialect(new SpringSecurityDialect());
-        return templateEngine;
-    }
+	@Bean
+	public TemplateResolver templateResolver() {
+		TemplateResolver templateResolver = new ServletContextTemplateResolver();
+		templateResolver.setPrefix(VIEWS);
+		templateResolver.setSuffix(".html");
+		templateResolver.setTemplateMode("HTML5");
+		templateResolver.setCacheable(false);
+		return templateResolver;
+	}
 
-    @Bean
-    public ThymeleafViewResolver viewResolver() {
-        ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
-        thymeleafViewResolver.setTemplateEngine(templateEngine());
-        thymeleafViewResolver.setCharacterEncoding("UTF-8");
-        return thymeleafViewResolver;
-    }
+	@Bean
+	public SpringTemplateEngine templateEngine() {
+		SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+		templateEngine.setTemplateResolver(templateResolver());
+		templateEngine.addDialect(new LayoutDialect());
+		//templateEngine.addDialect(new SpringSecurityDialect());
+		return templateEngine;
+	}
 
-    /**
-     * Handles favicon.ico requests assuring no <code>404 Not Found</code> error is returned.
-     */
-    @Controller
-    static class FaviconController {
-        @RequestMapping("favicon.ico")
-        String favicon() {
-            return "forward:/resources/images/favicon.ico";
-        }
-    }
+	@Bean
+	public ThymeleafViewResolver viewResolver() {
+		ThymeleafViewResolver thymeleafViewResolver = new ThymeleafViewResolver();
+		thymeleafViewResolver.setTemplateEngine(templateEngine());
+		thymeleafViewResolver.setCharacterEncoding("UTF-8");
+		return thymeleafViewResolver;
+	}
+
+	/**
+	 * Handles favicon.ico requests assuring no <code>404 Not Found</code> error is returned.
+	 */
+	@Controller
+	static class FaviconController {
+		@RequestMapping("favicon.ico")
+		String favicon() {
+			return "forward:/resources/images/favicon.ico";
+		}
+	}
 }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE" th:text="${pageViewModel.applicationName}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+	<script th:src="@{webjars/jquery/} + ${pageViewModel.jqueryVersion} + '/jquery.min.js'"></script>
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap.min.css'" />
+    <link rel="stylesheet" th:href="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap-theme.min.css'" />
+    <script th:src="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/js/bootstrap.min.js'"></script>
+    
+  </head>
+  <body>
+    <div th:replace="fragments/header :: header">
+	
+    </div>
+    
+    <div class="container">
+      <div layout:fragment="content">
+        
+      </div>
+      
+      <div th:replace="fragments/footer :: footer">&copy; 2014 The Static Templates</div>
+    </div>
+    
+  </body>
+</html>

@@ -14,6 +14,9 @@ public class ApplicationConfigService implements IApplicationConfigService {
 	private static String APPLICATION_VERSION_KEY = "application.version";
 	private static String APPLICATION_NAME_KEY = "application.name";
 	
+	private static String APPLICATION_BOOTSTRAP_VERSION = "application.bootstrap.version";
+	private static String APPLICATION_JQUERY_VERSION = "application.jquery.version";
+	
 	@Autowired
 	private Environment env;
 	
@@ -38,5 +41,15 @@ public class ApplicationConfigService implements IApplicationConfigService {
 	@Override
 	public String getName() {
 		return this.env.getProperty(APPLICATION_NAME_KEY);
+	}
+	
+	@Override
+	public String getBootstrapVersion() {
+		return this.env.getProperty(APPLICATION_BOOTSTRAP_VERSION);
+	}
+	
+	@Override
+	public String getJqueryVersion() {
+		return this.env.getProperty(APPLICATION_JQUERY_VERSION);
 	}
 }
