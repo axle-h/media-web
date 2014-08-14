@@ -7,6 +7,8 @@ public class PageViewModel {
 	private String bootstrapVersion;
 	
 	private String jqueryVersion;
+	
+	private Iterable<LinkViewModel> links;
 
 	/**
 	 * @return the applicationName
@@ -48,6 +50,20 @@ public class PageViewModel {
 	 */
 	public void setJqueryVersion(String jqueryVersion) {
 		this.jqueryVersion = jqueryVersion;
+	}
+
+	/**
+	 * @return the links
+	 */
+	public Iterable<LinkViewModel> getLinks() {
+		return links;
+	}
+
+	/**
+	 * @param links the links to set
+	 */
+	public void setLinks(Iterable<LinkViewModel> links) {
+		this.links = links;
 	}
 	
 }

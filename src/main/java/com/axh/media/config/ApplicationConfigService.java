@@ -1,5 +1,9 @@
 package com.axh.media.config;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
@@ -9,13 +13,15 @@ import com.axh.media.config.contracts.IApplicationConfigService;
 @Service
 public class ApplicationConfigService implements IApplicationConfigService {
 	
-	private static String APPLICATION_GROUPID_KEY = "application.groupId";
-	private static String APPLICATION_ARTIFACTID_KEY = "application.artifactId";
-	private static String APPLICATION_VERSION_KEY = "application.version";
-	private static String APPLICATION_NAME_KEY = "application.name";
+	private static final String APPLICATION_GROUPID_KEY = "application.groupId";
+	private static final String APPLICATION_ARTIFACTID_KEY = "application.artifactId";
+	private static final String APPLICATION_VERSION_KEY = "application.version";
+	private static final String APPLICATION_NAME_KEY = "application.name";
 	
-	private static String APPLICATION_BOOTSTRAP_VERSION = "application.bootstrap.version";
-	private static String APPLICATION_JQUERY_VERSION = "application.jquery.version";
+	private static final String APPLICATION_BOOTSTRAP_VERSION = "application.bootstrap.version";
+	private static final String APPLICATION_JQUERY_VERSION = "application.jquery.version";
+	
+	private static final String APPLICATION_LINKS = "application.links";
 	
 	@Autowired
 	private Environment env;
@@ -51,5 +57,14 @@ public class ApplicationConfigService implements IApplicationConfigService {
 	@Override
 	public String getJqueryVersion() {
 		return this.env.getProperty(APPLICATION_JQUERY_VERSION);
+	}
+	
+	@Override
+	public Iterable<ImmutablePair<String, String>> getPages() {
+		return Arrays.stream(this.env.getProperty(APPLICATION_LINKS).split(","))
+				.map(x -> x.split("|"))
+				.filter(x -> x.length == 2)
+				.map(x -> ImmutablePair.of(x[0], x[1]))
+				::iterator;
 	}
 }

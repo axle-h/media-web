@@ -25,20 +25,6 @@
 		<lesscss.outputDirectory>${project.build.directory}/${project.build.finalName}/resources/css</lesscss.outputDirectory>
 	</properties>
 
-	<profiles>
-		<profile>
-			<id>m2e</id>
-			<activation>
-				<property>
-					<name>m2e.version</name>
-				</property>
-			</activation>
-			<properties>
-				<lesscss.outputDirectory>${project.build.directory}/m2e-wtp/web-resources/resources/css</lesscss.outputDirectory>
-			</properties>
-		</profile>
-	</profiles>
-
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -123,6 +109,11 @@
 			<artifactId>lesscss-maven-plugin</artifactId>
 			<version>1.7.0.1.1</version>
 			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
 		</dependency>
 	</dependencies>
 
@@ -226,7 +217,7 @@
 				<version>1.7.0.1.1</version>
 				<configuration>
 					<sourceDirectory>${project.basedir}/src/main/resources/less</sourceDirectory>
-					<outputDirectory>${lesscss.outputDirectory}</outputDirectory>
+					<outputDirectory>${project.basedir}/src/main/webapp/resources/css</outputDirectory>
 					<compress>false</compress>
 				</configuration>
 				<executions>
@@ -240,5 +231,21 @@
 
 		</plugins>
 	</build>
+	
+	<!-- 
+	<profiles>
+		<profile>
+			<id>m2e</id>
+			<activation>
+				<property>
+					<name>m2e.version</name>
+				</property>
+			</activation>
+			<properties>
+				<lesscss.outputDirectory>${project.build.directory}/m2e-wtp/web-resources/resources/css</lesscss.outputDirectory>
+			</properties>
+		</profile>
+	</profiles>
+	 -->
 
 </project>
