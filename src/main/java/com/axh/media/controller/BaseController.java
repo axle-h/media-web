@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import com.axh.media.model.view.PageViewModel;
-import com.axh.media.service.contracts.viewmodel.IPageViewModelService;
+import com.axh.media.service.viewmodel.contracts.IPageViewModelService;
 
 public abstract class BaseController {
 	

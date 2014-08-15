@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.axh.media.config.contracts.IApplicationConfigService;
 import com.axh.media.service.contracts.IFilmsService;
-import com.axh.media.service.contracts.viewmodel.IPageViewModelService;
+import com.axh.media.service.viewmodel.contracts.IPageViewModelService;
 
 @Controller
 @RequestMapping("/")

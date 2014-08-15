@@ -1,4 +1,4 @@
-package com.axh.media.service.contracts.viewmodel;
+package com.axh.media.service.viewmodel.contracts;
 
 import com.axh.media.model.view.PageViewModel;
 
