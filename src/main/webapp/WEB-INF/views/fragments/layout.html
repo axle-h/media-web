@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
     <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE" th:text="${pageViewModel.applicationName}"></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     
-	<script th:src="@{webjars/jquery/} + ${pageViewModel.jqueryVersion} + '/jquery.min.js'"></script>
-    <link rel="stylesheet" th:href="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap.min.css'" />
-    <link rel="stylesheet" th:href="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap-theme.min.css'" />
-    <script th:src="@{webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/js/bootstrap.min.js'"></script>
-    <link rel="stylesheet" href="resources/css/site.css" />
+    <link rel="shortcut icon" th:href="@{resources/images/favicon.ico}" />
+    
+	<script th:src="@{/webjars/jquery/} + ${pageViewModel.jqueryVersion} + '/jquery.min.js'"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap.min.css'" />
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/css/bootstrap-theme.min.css'" />
+    <script th:src="@{/webjars/bootstrap/} + ${pageViewModel.bootstrapVersion} + '/js/bootstrap.min.js'"></script>
+    <link rel="stylesheet" th:href="@{/resources/css/site.css}" />
     
   </head>
   <body>

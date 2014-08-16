@@ -1,8 +1,8 @@
 package com.axh.media.config;
 
 import java.util.Arrays;
-import java.util.stream.Stream;
-
+import java.util.List;
+import java.util.stream.Collectors;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -60,11 +60,11 @@ public class ApplicationConfigService implements IApplicationConfigService {
 	}
 	
 	@Override
-	public Iterable<ImmutablePair<String, String>> getPages() {
-		return Arrays.stream(this.env.getProperty(APPLICATION_LINKS).split(","))
-				.map(x -> x.split("|"))
+	public List<ImmutablePair<String, String>> getPages() {
+		return Arrays.stream(this.env.getProperty(APPLICATION_LINKS).split(";"))
+				.map(x -> x.split(","))
 				.filter(x -> x.length == 2)
 				.map(x -> ImmutablePair.of(x[0], x[1]))
-				::iterator;
+				.collect(Collectors.toList());
 	}
 }

@@ -2,8 +2,6 @@ package com.axh.media.repository.contracts;
 
 import java.util.List;
 
-import org.hibernate.Session;
-
 import com.axh.media.model.domain.Film;
 
 public interface ITorrentsRepository {

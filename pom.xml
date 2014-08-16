@@ -127,9 +127,9 @@
 
 		<plugins>
 			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
+				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>8.1.6.v20120903</version>
+				<version>9.2.2.v20140723</version>
 				<configuration>
 					<scanintervalseconds>10</scanintervalseconds>
 					<webApp>
@@ -231,21 +231,5 @@
 
 		</plugins>
 	</build>
-	
-	<!-- 
-	<profiles>
-		<profile>
-			<id>m2e</id>
-			<activation>
-				<property>
-					<name>m2e.version</name>
-				</property>
-			</activation>
-			<properties>
-				<lesscss.outputDirectory>${project.build.directory}/m2e-wtp/web-resources/resources/css</lesscss.outputDirectory>
-			</properties>
-		</profile>
-	</profiles>
-	 -->
 
 </project>

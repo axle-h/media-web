@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="fragments/layout">
+<head>
+<title th:text="#{view.index.title}"></title>
+</head>
+<body>
+
+	<div layout:fragment="content">
+
+		<div class="text-center">
+			<h1>Test</h1>
+			<p class="lead">
+				<span th:text="#{helloWorld.message}"></span>
+			</p>
+			<p>
+				<a href="/signup" th:href="@{/signup}"
+					class="btn btn-success btn-lg">Sign up</a>
+			</p>
+		</div>
+
+	</div>
+</body>
+</html>

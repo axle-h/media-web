@@ -1,6 +1,11 @@
 package com.axh.media.model.view;
 
+import java.util.Calendar;
+import java.util.List;
+
 public class PageViewModel {
+	
+	public Calendar date;
 	
 	private String applicationName;
 	
@@ -8,7 +13,21 @@ public class PageViewModel {
 	
 	private String jqueryVersion;
 	
-	private Iterable<LinkViewModel> links;
+	private List<LinkViewModel> links;
+
+	/**
+	 * @return the date
+	 */
+	public Calendar getDate() {
+		return date;
+	}
+
+	/**
+	 * @param date the date to set
+	 */
+	public void setDate(Calendar date) {
+		this.date = date;
+	}
 
 	/**
 	 * @return the applicationName
@@ -55,14 +74,14 @@ public class PageViewModel {
 	/**
 	 * @return the links
 	 */
-	public Iterable<LinkViewModel> getLinks() {
+	public List<LinkViewModel> getLinks() {
 		return links;
 	}
 
 	/**
 	 * @param links the links to set
 	 */
-	public void setLinks(Iterable<LinkViewModel> links) {
+	public void setLinks(List<LinkViewModel> links) {
 		this.links = links;
 	}
 	
