@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.axh.media.model.mapping.FilmMapping;
+import com.axh.media.model.view.FilmViewModel;
 import com.axh.media.service.contracts.IFilmsService;
 
 @Controller
@@ -18,9 +20,9 @@ public class MoviesController extends BaseController {
 	@RequestMapping(method = RequestMethod.GET)
     public ModelAndView index() {
 		
-		//for(Film film : this.filmsService.getFilmsByPageNumber(1)) {
-		//	System.out.println(film.getTitle());
-		//}
+		for(FilmViewModel film : this.filmsService.getFilmsByPageNumber(1, FilmMapping.TITLE, false, "720p")) {
+			System.out.println(film.getTitle() + ", " + film.getQuality());
+		}
 		
         ModelAndView mav = new ModelAndView();
         mav.setViewName("movies/index");

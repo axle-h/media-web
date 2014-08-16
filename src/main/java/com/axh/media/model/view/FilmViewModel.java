@@ -1,66 +1,38 @@
-package com.axh.media.model.domain;
+package com.axh.media.model.view;
 
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-import com.axh.media.model.mapping.FilmMapping;
-
-@Entity
-@Table(name = "films")
-public class Film {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = FilmMapping.ID_FIELDNAME , nullable = false)
+public class FilmViewModel {
+	
 	private int filmId;
 	
-	@Column(name = FilmMapping.TITLE_FIELDNAME, nullable = false, length = 150)
 	private String title;
 	
-	@Column(name = FilmMapping.RELEASEYEAR_FIELDNAME, nullable = false)
 	private int releaseYear;
 	
-	@Column(name = FilmMapping.PUBLISHED_FIELDNAME, nullable = false)
 	private Calendar published;
 	
-	@Column(name = FilmMapping.TORRENT_FIELDNAME, nullable = false, length = 200)
 	private String torrent;
 	
-	@Column(name = FilmMapping.LINK_FIELDNAME, nullable = false, length = 200)
 	private String link;
 	
-	@Column(name = FilmMapping.IMDB_FIELDNAME, nullable = false, length = 100)
 	private String imdbLink;
 	
-	@Column(name = FilmMapping.RATING_FIELDNAME, nullable = false, precision = 3)
 	private BigDecimal imdbRating;
 	
-	@Column(name = FilmMapping.GENRE_FIELDNAME, nullable = false, length = 100)
 	private String genre;
 	
-	@Column(name = FilmMapping.QUALITY_FIELDNAME, nullable = false, length = 10)
 	private String quality;
 	
-	@Column(name = FilmMapping.SIZE_FIELDNAME, nullable = false)
 	private long size;
 	
-	@Column(name = FilmMapping.RUNTIME_FIELDNAME, nullable = false)
 	private int runTime;
 	
-	@Column(name = FilmMapping.SYNOPSIS_FIELDNAME, nullable = false)
 	private String synopsis;
 	
-	@Column(name = FilmMapping.IMAGEURL_FIELDNAME, nullable = true, length = 1000)
 	private String imageUrl;
 	
-	@Column(name = FilmMapping.IMAGE_FIELDNAME, nullable = true)
 	private byte[] image;
 
 	/**
@@ -272,5 +244,6 @@ public class Film {
 	public void setImage(byte[] image) {
 		this.image = image;
 	}
+	
 	
 }
