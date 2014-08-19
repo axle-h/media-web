@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import com.axh.media.model.mapping.FilmMapping;
 
 @Entity
-@Table(name = "films")
+@Table(name = "films_1080p")
 public class Film {
 
 	@Id
@@ -56,12 +56,6 @@ public class Film {
 	
 	@Column(name = FilmMapping.SYNOPSIS_FIELDNAME, nullable = false)
 	private String synopsis;
-	
-	@Column(name = FilmMapping.IMAGEURL_FIELDNAME, nullable = true, length = 1000)
-	private String imageUrl;
-	
-	@Column(name = FilmMapping.IMAGE_FIELDNAME, nullable = true)
-	private byte[] image;
 
 	/**
 	 * @return the filmId
@@ -243,34 +237,6 @@ public class Film {
 	 */
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
-	}
-
-	/**
-	 * @return the imageUrl
-	 */
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	/**
-	 * @param imageUrl the imageUrl to set
-	 */
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-
-	/**
-	 * @return the image
-	 */
-	public byte[] getImage() {
-		return image;
-	}
-
-	/**
-	 * @param image the image to set
-	 */
-	public void setImage(byte[] image) {
-		this.image = image;
 	}
 	
 }

@@ -16,8 +16,8 @@ import org.springframework.stereotype.Repository;
 
 import com.axh.common.enums.LogicalOperation;
 import com.axh.common.enums.SortOrder;
-import com.axh.media.model.domain.Film;
-import com.axh.media.model.mapping.FilmMapping;
+import com.axh.media.model.domain.Movie;
+import com.axh.media.model.mapping.MovieMapping;
 import com.axh.media.repository.contracts.ITorrentsRepository;
 
 @Repository
@@ -26,70 +26,70 @@ public class TorrentsRepository implements ITorrentsRepository {
 	private SessionFactory torrentsSessionFactory;
 
 	/* (non-Javadoc)
-	 * @see com.axh.media.repository.ITorrentsRepository#getFilmById(int)
+	 * @see com.axh.media.repository.ITorrentsRepository#getMovieById(int)
 	 */
 	@Override
-	public Film getFilmById(int id) {
+	public Movie getMovieById(int id) {
 		Session session = torrentsSessionFactory.openSession();
-		Film film = (Film)session.get(Film.class, id);
+		Movie movie = (Movie)session.get(Movie.class, id);
 		session.close();
-		return film;
+		return movie;
     }
 	
 	/* (non-Javadoc)
-	 * @see com.axh.media.repository.ITorrentsRepository#getFilmByTitle(java.lang.String)
+	 * @see com.axh.media.repository.ITorrentsRepository#getMovieByTitle(java.lang.String)
 	 */
 	@Override
-	public Film getFilmByTitle(String title) {
+	public Movie getMovieByTitle(String title) {
 		Session session = torrentsSessionFactory.openSession();
 		
-		Object result = session.createCriteria(Film.class).add(Restrictions.eq("title", title)).uniqueResult();
+		Object result = session.createCriteria(Movie.class).add(Restrictions.eq("title", title)).uniqueResult();
 		session.close();
 		
 		if(result == null) {
 			return null;
 		}
 		
-		return (Film)result;
+		return (Movie)result;
 	}
 	
 	/* (non-Javadoc)
-	 * @see com.axh.media.repository.ITorrentsRepository#getAllFilms()
+	 * @see com.axh.media.repository.ITorrentsRepository#getAllMovies()
 	 */
 	@Override
-	public List<Film> getAllFilms() {
+	public List<Movie> getAllMovies() {
 		Session session = torrentsSessionFactory.openSession();
 		
 		@SuppressWarnings("unchecked")
-		List<Film> films = session.createCriteria(Film.class).list();
+		List<Movie> movies = session.createCriteria(Movie.class).list();
 		
 		session.close();
-		return films;
+		return movies;
 	}
 	
 	@Override
-	public List<Film> getFilmsByPageNumber(int pageNumber, int pageSize) {
+	public List<Movie> getMoviesByPageNumber(int pageNumber, int pageSize) {
 		Session session = torrentsSessionFactory.openSession();
 		
 		@SuppressWarnings("unchecked")
-		List<Film> films = session.createCriteria(Film.class)
+		List<Movie> movies = session.createCriteria(Movie.class)
 			.setFirstResult((pageNumber - 1) * pageSize)
 			.setMaxResults(pageSize)
 			.list();
 		
 		session.close();
-		return films;
+		return movies;
 	}
 
 	@Override
-	public List<Film> getFilmsByPageNumber(int pageNumber, int pageSize,
-			List<FilmMapping> projections,
-			List<ImmutableTriple<FilmMapping, LogicalOperation, Object>> conditions,
-			List<ImmutablePair<FilmMapping, SortOrder>> orderBys) {
+	public List<Movie> getMoviesByPageNumber(int pageNumber, int pageSize,
+			List<MovieMapping> projections,
+			List<ImmutableTriple<MovieMapping, LogicalOperation, Object>> conditions,
+			List<ImmutablePair<MovieMapping, SortOrder>> orderBys) {
 		
 		Session session = torrentsSessionFactory.openSession();
 		
-		Criteria criteria = session.createCriteria(Film.class);
+		Criteria criteria = session.createCriteria(Movie.class);
 		
 		if(projections != null && !projections.isEmpty()) {
 			ProjectionList projectionList = Projections.projectionList();
@@ -134,10 +134,10 @@ public class TorrentsRepository implements ITorrentsRepository {
 		}
 		
 		@SuppressWarnings("unchecked")
-		List<Film> films = criteria.setFirstResult((pageNumber - 1) * pageSize).setMaxResults(pageSize).list();
+		List<Movie> movies = criteria.setFirstResult((pageNumber - 1) * pageSize).setMaxResults(pageSize).list();
 		
 		session.close();
-		return films;
+		return movies;
 	}
 	
 	

@@ -2,7 +2,6 @@ package com.axh.media.model.mapping;
 
 public enum FilmMapping {
 	
-	
 	ID (FilmMapping.ID_FIELDNAME),
 	TITLE (FilmMapping.TITLE_FIELDNAME),
 	RELEASEYEAR (FilmMapping.RELEASEYEAR_FIELDNAME),
@@ -15,9 +14,7 @@ public enum FilmMapping {
     QUALITY (FilmMapping.QUALITY_FIELDNAME),
     SIZE (FilmMapping.SIZE_FIELDNAME),
     RUNTIME (FilmMapping.RUNTIME_FIELDNAME),
-    SYNOPSIS (FilmMapping.SYNOPSIS_FIELDNAME),
-    IMAGEURL (FilmMapping.IMAGEURL_FIELDNAME),
-    IMAGE (FilmMapping.IMAGE_FIELDNAME);
+    SYNOPSIS (FilmMapping.SYNOPSIS_FIELDNAME);
 	
 	public static final String ID_FIELDNAME = "film_id";
 	public static final String TITLE_FIELDNAME = "title";
@@ -32,8 +29,6 @@ public enum FilmMapping {
 	public static final String SIZE_FIELDNAME = "size";
 	public static final String RUNTIME_FIELDNAME = "runTime";
 	public static final String SYNOPSIS_FIELDNAME = "synopsis";
-	public static final String IMAGEURL_FIELDNAME = "imageUrl";
-	public static final String IMAGE_FIELDNAME = "image";
 	
 	
 	private String fieldName;
