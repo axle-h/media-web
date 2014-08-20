@@ -13,17 +13,11 @@ public class MovieViewModel {
 	
 	private Calendar published;
 	
-	private String torrent;
-	
-	private String link;
-	
 	private String imdb;
 	
 	private BigDecimal rating;
 	
 	private String genre;
-	
-	private long size;
 	
 	private int runTime;
 	
@@ -90,34 +84,6 @@ public class MovieViewModel {
 	}
 
 	/**
-	 * @return the torrent
-	 */
-	public String getTorrent() {
-		return torrent;
-	}
-
-	/**
-	 * @param torrent the torrent to set
-	 */
-	public void setTorrent(String torrent) {
-		this.torrent = torrent;
-	}
-
-	/**
-	 * @return the link
-	 */
-	public String getLink() {
-		return link;
-	}
-
-	/**
-	 * @param link the link to set
-	 */
-	public void setLink(String link) {
-		this.link = link;
-	}
-
-	/**
 	 * @return the imdb
 	 */
 	public String getImdb() {
@@ -157,20 +123,6 @@ public class MovieViewModel {
 	 */
 	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-
-	/**
-	 * @return the size
-	 */
-	public long getSize() {
-		return size;
-	}
-
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(long size) {
-		this.size = size;
 	}
 
 	/**

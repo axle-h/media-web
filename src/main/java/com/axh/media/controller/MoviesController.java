@@ -21,7 +21,7 @@ public class MoviesController extends BaseController {
     public ModelAndView index() {
 		
 		for(MovieViewModel movie : this.movieService.getMoviesByPageNumber(1, MovieMapping.TITLE, false)) {
-			System.out.println(movie.getTitle());
+			System.out.println(movie.getTitle() + ", " + movie.getImageUrl());
 		}
 		
         ModelAndView mav = new ModelAndView();

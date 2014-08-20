@@ -23,26 +23,11 @@ public class Movie {
 	@Column(name = MovieMapping.ID_FIELDNAME, nullable = false)
 	private int filmId;
 	
-	@Column(name = MovieMapping.ID_1080P_FIELDNAME, nullable = true)
-	private int film1080pId;
-
-	@Column(name = MovieMapping.ID_720P_FIELDNAME, nullable = true)
-	private int film720pId;
-
-	@Column(name = MovieMapping.ID_IMAGE_FIELDNAME, nullable = true)
-	private int imageId;
-	
 	@Column(name = MovieMapping.TITLE_FIELDNAME, nullable = false, length = 150)
 	private String title;
 	
 	@Column(name = MovieMapping.YEAR_FIELDNAME, nullable = false)
 	private int year;
-	
-	@Column(name = MovieMapping.TORRENT_FIELDNAME, nullable = false, length = 200)
-	private String torrent;
-	
-	@Column(name = MovieMapping.LINK_FIELDNAME, nullable = false, length = 200)
-	private String link;
 	
 	@Column(name = MovieMapping.IMDB_FIELDNAME, nullable = false, length = 100)
 	private String imdb;
@@ -52,9 +37,6 @@ public class Movie {
 	
 	@Column(name = MovieMapping.GENRE_FIELDNAME, nullable = false, length = 100)
 	private String genre;
-	
-	@Column(name = MovieMapping.SIZE_FIELDNAME, nullable = false)
-	private long size;
 	
 	@Column(name = MovieMapping.RUNTIME_FIELDNAME, nullable = false)
 	private int runTime;
@@ -78,48 +60,6 @@ public class Movie {
 	 */
 	public void setFilmId(int filmId) {
 		this.filmId = filmId;
-	}
-
-	/**
-	 * @return the film1080pId
-	 */
-	public int getFilm1080pId() {
-		return film1080pId;
-	}
-
-	/**
-	 * @param film1080pId the film1080pId to set
-	 */
-	public void setFilm1080pId(int film1080pId) {
-		this.film1080pId = film1080pId;
-	}
-
-	/**
-	 * @return the film720pId
-	 */
-	public int getFilm720pId() {
-		return film720pId;
-	}
-
-	/**
-	 * @param film720pId the film720pId to set
-	 */
-	public void setFilm720pId(int film720pId) {
-		this.film720pId = film720pId;
-	}
-
-	/**
-	 * @return the imageId
-	 */
-	public int getImageId() {
-		return imageId;
-	}
-
-	/**
-	 * @param imageId the imageId to set
-	 */
-	public void setImageId(int imageId) {
-		this.imageId = imageId;
 	}
 
 	/**
@@ -148,34 +88,6 @@ public class Movie {
 	 */
 	public void setYear(int year) {
 		this.year = year;
-	}
-
-	/**
-	 * @return the torrent
-	 */
-	public String getTorrent() {
-		return torrent;
-	}
-
-	/**
-	 * @param torrent the torrent to set
-	 */
-	public void setTorrent(String torrent) {
-		this.torrent = torrent;
-	}
-
-	/**
-	 * @return the link
-	 */
-	public String getLink() {
-		return link;
-	}
-
-	/**
-	 * @param link the link to set
-	 */
-	public void setLink(String link) {
-		this.link = link;
 	}
 
 	/**
@@ -218,20 +130,6 @@ public class Movie {
 	 */
 	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-
-	/**
-	 * @return the size
-	 */
-	public long getSize() {
-		return size;
-	}
-
-	/**
-	 * @param size the size to set
-	 */
-	public void setSize(long size) {
-		this.size = size;
 	}
 
 	/**
