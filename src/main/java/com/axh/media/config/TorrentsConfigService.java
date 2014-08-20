@@ -18,7 +18,7 @@ public class TorrentsConfigService implements ITorrentsConfigService {
 	 * @see com.axh.media.config.ITorrentsConfigService#getFilmPageSize()
 	 */
 	@Override
-	public int getFilmPageSize() {
+	public int getMoviePageSize() {
 		return env.getProperty(APPLICATION_TORRENTS_PAGE_SIZE_KEY, Integer.class).intValue();
 	}
 }

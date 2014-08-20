@@ -3,7 +3,7 @@ package com.axh.media.model.view;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-public class FilmViewModel {
+public class MovieViewModel {
 	
 	private int filmId;
 	
@@ -17,13 +17,11 @@ public class FilmViewModel {
 	
 	private String link;
 	
-	private String imdbLink;
+	private String imdb;
 	
-	private BigDecimal imdbRating;
+	private BigDecimal rating;
 	
 	private String genre;
-	
-	private String quality;
 	
 	private long size;
 	
@@ -120,31 +118,31 @@ public class FilmViewModel {
 	}
 
 	/**
-	 * @return the imdbLink
+	 * @return the imdb
 	 */
-	public String getImdbLink() {
-		return imdbLink;
+	public String getImdb() {
+		return imdb;
 	}
 
 	/**
-	 * @param imdbLink the imdbLink to set
+	 * @param imdb the imdb to set
 	 */
-	public void setImdbLink(String imdbLink) {
-		this.imdbLink = imdbLink;
+	public void setImdb(String imdb) {
+		this.imdb = imdb;
 	}
 
 	/**
-	 * @return the imdbRating
+	 * @return the rating
 	 */
-	public BigDecimal getImdbRating() {
-		return imdbRating;
+	public BigDecimal getRating() {
+		return rating;
 	}
 
 	/**
-	 * @param imdbRating the imdbRating to set
+	 * @param rating the rating to set
 	 */
-	public void setImdbRating(BigDecimal imdbRating) {
-		this.imdbRating = imdbRating;
+	public void setRating(BigDecimal rating) {
+		this.rating = rating;
 	}
 
 	/**
@@ -159,20 +157,6 @@ public class FilmViewModel {
 	 */
 	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-
-	/**
-	 * @return the quality
-	 */
-	public String getQuality() {
-		return quality;
-	}
-
-	/**
-	 * @param quality the quality to set
-	 */
-	public void setQuality(String quality) {
-		this.quality = quality;
 	}
 
 	/**

@@ -6,22 +6,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.axh.media.model.mapping.FilmMapping;
-import com.axh.media.model.view.FilmViewModel;
-import com.axh.media.service.contracts.IFilmsService;
+import com.axh.media.model.mapping.MovieMapping;
+import com.axh.media.model.view.MovieViewModel;
+import com.axh.media.service.contracts.IMovieService;
 
 @Controller
 @RequestMapping("/movies")
 public class MoviesController extends BaseController {
 	
 	@Autowired
-	private IFilmsService filmsService;
+	private IMovieService movieService;
 	
 	@RequestMapping(method = RequestMethod.GET)
     public ModelAndView index() {
 		
-		for(FilmViewModel film : this.filmsService.getFilmsByPageNumber(1, FilmMapping.TITLE, false, "720p")) {
-			System.out.println(film.getTitle() + ", " + film.getQuality());
+		for(MovieViewModel movie : this.movieService.getMoviesByPageNumber(1, MovieMapping.TITLE, false)) {
+			System.out.println(movie.getTitle());
 		}
 		
         ModelAndView mav = new ModelAndView();
