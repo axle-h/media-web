@@ -16,6 +16,7 @@ import org.springframework.stereotype.Repository;
 
 import com.axh.common.enums.LogicalOperation;
 import com.axh.common.enums.SortOrder;
+import com.axh.media.model.domain.Image;
 import com.axh.media.model.domain.Movie;
 import com.axh.media.model.mapping.MovieMapping;
 import com.axh.media.repository.contracts.ITorrentsRepository;
@@ -139,6 +140,17 @@ public class TorrentsRepository implements ITorrentsRepository {
 		session.close();
 		return movies;
 	}
+	
+	@Override
+	public Image getImageById(int id) {
+		Session session = torrentsSessionFactory.openSession();
+		Image image = (Image)session.get(Image.class, id);
+		session.close();
+		return image;
+	}
+	
+	
+	
 	
 	
 }

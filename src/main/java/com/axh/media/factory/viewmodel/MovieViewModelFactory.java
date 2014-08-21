@@ -17,7 +17,7 @@ public class MovieViewModelFactory implements IMovieViewModelFactory {
 	public MovieViewModel getMovieViewModel(Movie movie) {
 		MovieViewModel model = new MovieViewModel();
 		
-		model.setFilmId(movie.getFilmId());
+		model.setMovieId(movie.getMovieId());
 		model.setTitle(movie.getTitle());
 		model.setReleaseYear(movie.getYear());
 		model.setImdb(movie.getImdb());
@@ -25,18 +25,6 @@ public class MovieViewModelFactory implements IMovieViewModelFactory {
 		model.setGenre(movie.getGenre());
 		model.setRunTime(movie.getRunTime());
 		model.setSynopsis(movie.getSynopsis());
-		
-		Image image = movie.getImage();
-		
-		if(image == null) {
-			model.setImageUrl("");
-			model.setImage(new byte[0]);
-		} else {
-			model.setImageUrl(image.getImageUrl());
-			model.setImage(image.getImage());
-		}
-		
-		
 		
 		return model;
 	}

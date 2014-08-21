@@ -21,6 +21,11 @@
 					class="btn btn-success btn-lg">Sign up</a>
 			</p>
 		</div>
+		
+		<div th:each="movie : ${movieViewModelList}">
+			<span th:text="${movie.title}"></span>
+			<img th:src="@{/movies/image/} + ${movie.movieId}" />
+		</div>
 
 	</div>
 </body>

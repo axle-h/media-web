@@ -21,7 +21,7 @@ public class Movie {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = MovieMapping.ID_FIELDNAME, nullable = false)
-	private int filmId;
+	private int movieId;
 	
 	@Column(name = MovieMapping.TITLE_FIELDNAME, nullable = false, length = 150)
 	private String title;
@@ -44,22 +44,25 @@ public class Movie {
 	@Column(name = MovieMapping.SYNOPSIS_FIELDNAME, nullable = false)
 	private String synopsis;
 	
+	/*
 	@OneToOne
 	@JoinColumn(name=MovieMapping.ID_IMAGE_FIELDNAME, referencedColumnName=ImageMapping.ID_FIELDNAME, nullable=true)
-	private Image image;
+	private Image image;*/
+
+	
 
 	/**
-	 * @return the filmId
+	 * @return the movieId
 	 */
-	public int getFilmId() {
-		return filmId;
+	public int getMovieId() {
+		return movieId;
 	}
 
 	/**
-	 * @param filmId the filmId to set
+	 * @param movieId the movieId to set
 	 */
-	public void setFilmId(int filmId) {
-		this.filmId = filmId;
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
 
 	/**
@@ -159,21 +162,5 @@ public class Movie {
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
 	}
-
-	/**
-	 * @return the image
-	 */
-	public Image getImage() {
-		return image;
-	}
-
-	/**
-	 * @param image the image to set
-	 */
-	public void setImage(Image image) {
-		this.image = image;
-	}
-	
-	
 	
 }

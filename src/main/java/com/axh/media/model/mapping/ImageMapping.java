@@ -6,7 +6,7 @@ public enum ImageMapping {
 	IMAGEURL (ImageMapping.IMAGEURL_FIELDNAME),
     IMAGE (ImageMapping.IMAGE_FIELDNAME);
 	
-	public static final String ID_FIELDNAME = "image_id";
+	public static final String ID_FIELDNAME = "movie_id";
 	public static final String IMAGEURL_FIELDNAME = "imageUrl";
 	public static final String IMAGE_FIELDNAME = "image";
 	

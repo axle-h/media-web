@@ -5,7 +5,7 @@ import java.util.Calendar;
 
 public class MovieViewModel {
 	
-	private int filmId;
+	private int movieId;
 	
 	private String title;
 	
@@ -22,23 +22,19 @@ public class MovieViewModel {
 	private int runTime;
 	
 	private String synopsis;
-	
-	private String imageUrl;
-	
-	private byte[] image;
 
 	/**
-	 * @return the filmId
+	 * @return the movieId
 	 */
-	public int getFilmId() {
-		return filmId;
+	public int getMovieId() {
+		return movieId;
 	}
 
 	/**
-	 * @param filmId the filmId to set
+	 * @param movieId the movieId to set
 	 */
-	public void setFilmId(int filmId) {
-		this.filmId = filmId;
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
 	}
 
 	/**
@@ -152,34 +148,5 @@ public class MovieViewModel {
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
 	}
-
-	/**
-	 * @return the imageUrl
-	 */
-	public String getImageUrl() {
-		return imageUrl;
-	}
-
-	/**
-	 * @param imageUrl the imageUrl to set
-	 */
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
-
-	/**
-	 * @return the image
-	 */
-	public byte[] getImage() {
-		return image;
-	}
-
-	/**
-	 * @param image the image to set
-	 */
-	public void setImage(byte[] image) {
-		this.image = image;
-	}
-	
 	
 }

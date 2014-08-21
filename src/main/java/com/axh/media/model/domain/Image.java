@@ -16,7 +16,7 @@ public class Image {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = ImageMapping.ID_FIELDNAME , nullable = false)
-	private int imageId;
+	private int filmId;
 	
 	@Column(name = ImageMapping.IMAGEURL_FIELDNAME, nullable = true, length = 1000)
 	private String imageUrl;
@@ -25,17 +25,17 @@ public class Image {
 	private byte[] image;
 
 	/**
-	 * @return the imageId
+	 * @return the filmId
 	 */
-	public int getImageId() {
-		return imageId;
+	public int getFilmId() {
+		return filmId;
 	}
 
 	/**
-	 * @param imageId the imageId to set
+	 * @param filmId the filmId to set
 	 */
-	public void setImageId(int imageId) {
-		this.imageId = imageId;
+	public void setFilmId(int filmId) {
+		this.filmId = filmId;
 	}
 
 	/**

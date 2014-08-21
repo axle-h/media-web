@@ -5,7 +5,6 @@ public enum MovieMapping {
 	ID (MovieMapping.ID_FIELDNAME),
 	ID_1080P (MovieMapping.ID_1080P_FIELDNAME),
 	ID_720P (MovieMapping.ID_720P_FIELDNAME),
-	ID_IMAGE (MovieMapping.ID_IMAGE_FIELDNAME),
 	TITLE (MovieMapping.TITLE_FIELDNAME),
 	RELEASEYEAR (MovieMapping.YEAR_FIELDNAME),
     IMDB (MovieMapping.IMDB_FIELDNAME),
@@ -18,7 +17,6 @@ public enum MovieMapping {
 	public static final String ID_FIELDNAME = "movie_id";
 	public static final String ID_1080P_FIELDNAME = "film_1080p_id";
 	public static final String ID_720P_FIELDNAME = "film_720p_id";
-	public static final String ID_IMAGE_FIELDNAME = "image_id";
 	public static final String TITLE_FIELDNAME = "title";
 	public static final String YEAR_FIELDNAME = "year";
 	public static final String IMDB_FIELDNAME = "imdb";
