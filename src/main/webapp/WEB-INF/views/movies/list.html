@@ -22,9 +22,15 @@
 			</p>
 		</div>
 		
-		<div th:each="movie : ${movieViewModelList}">
-			<span th:text="${movie.title}"></span>
-			<img th:src="@{/movies/image/} + ${movie.movieId}" />
+		<h1>Movies</h1>
+		
+		<div th:each="movie : ${movieViewModelList}" class="row">
+			<div class="col-md-4">
+				<img th:src="@{/movies/image/} + ${movie.movieId}" width="150" height="221" />
+			</div>
+			<div class="col-md-8">
+				<span th:text="${movie.title}"></span>
+			</div>
 		</div>
 
 	</div>
